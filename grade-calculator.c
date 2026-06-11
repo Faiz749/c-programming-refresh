@@ -57,7 +57,7 @@ int main(void)
         else
         {
             printf("Grade: Fail\n");
-            printf("Status : Pass");
+            printf("Status : Fail");
         }
     }
 
