@@ -1,90 +1,103 @@
-#include<stdio.h>
-#include<stdbool.h>
+#include <stdio.h>
 
-float celsius_to_fahrenheit(float c);
-float farenheit_to_celsius(float f);
-float km_to_miles(float km);
-float miles_to_km(float miles);
-float calculate_power(float v,float i);
+float celsius_to_fahrenheit(float celsius);
+float fahrenheit_to_celsius(float fahrenheit);
+float kilometers_to_miles(float kilometers);
+float miles_to_kilometers(float miles);
+float calculate_power(float voltage, float current);
 
-int main(void){
+int main(void)
+{
     int choice;
-    float fahrenheit,celsius,kilometer,miles,voltage,current;
-    do{
-        printf("---unit converter----\n");
-        printf("Press 1 to convert Celsius to Fahrenheit\n");
-        printf("Press 2 to convert Fahrenheit to Celsius\n");
-        printf("Press 3 to convert Kilometers to Miles\n");
-        printf("Press 4 to convert Miles to Kilometers\n");
-        printf("Press 5 to calculate Power\n");
-        printf("Press 6 to Exit\n");
+    float celsius, fahrenheit;
+    float kilometers, miles;
+    float voltage, current;
 
-        while(true){
-             printf("Please Enter your choice: ");
-             scanf("%d",&choice );
-             if(choice>=1 && choice<=6){
-                break;
-             }
-             else {
-                printf("Invalid Choice please try again");
-             }
-        }
+    do
+    {
+        printf("\n===== Unit Converter =====\n");
+        printf("1. Celsius to Fahrenheit\n");
+        printf("2. Fahrenheit to Celsius\n");
+        printf("3. Kilometers to Miles\n");
+        printf("4. Miles to Kilometers\n");
+        printf("5. Voltage and Current to Power\n");
+        printf("6. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
 
-        if(choice == 1){
-            printf("Please eneter temperature in Fahrenheit: ");
-            scanf("%f", &fahrenheit);
-            printf("Temperature in Celsius: %.2f\n",farenheit_to_celsius(fahrenheit));
-        }
-
-        else if(choice == 2){
-            printf("Please eneter temperature in Celsius: ");
+        if (choice == 1)
+        {
+            printf("Enter temperature in Celsius: ");
             scanf("%f", &celsius);
-            printf("Temperature in Fahrenheit: %.2f\n",celsius_to_fahrenheit(celsius)); 
-        }
 
-        else if(choice == 3){
+            printf("Temperature in Fahrenheit: %.2f F\n", celsius_to_fahrenheit(celsius));
+        }
+        else if (choice == 2)
+        {
+            printf("Enter temperature in Fahrenheit: ");
+            scanf("%f", &fahrenheit);
+
+            printf("Temperature in Celsius: %.2f C\n", fahrenheit_to_celsius(fahrenheit));
+        }
+        else if (choice == 3)
+        {
             printf("Enter distance in Kilometers: ");
-            scanf("%f",&kilometer);
-            printf("Distance in Meters: %.2f\n",km_to_miles(kilometer));
+            scanf("%f", &kilometers);
+
+            printf("Distance in Miles: %.2f miles\n", kilometers_to_miles(kilometers));
+        }
+        else if (choice == 4)
+        {
+            printf("Enter distance in Miles: ");
+            scanf("%f", &miles);
+
+            printf("Distance in Kilometers: %.2f km\n", miles_to_kilometers(miles));
+        }
+        else if (choice == 5)
+        {
+            printf("Enter voltage of the circuit: ");
+            scanf("%f", &voltage);
+
+            printf("Enter current of the circuit: ");
+            scanf("%f", &current);
+
+            printf("Power: %.2f Watts\n", calculate_power(voltage, current));
+        }
+        else if (choice == 6)
+        {
+            printf("Exiting program...\n");
+        }
+        else
+        {
+            printf("Invalid choice. Please select from 1 to 6.\n");
         }
 
-        else if(choice == 4){
-            printf("Enter distance in Miles");
-            scanf("%f",&miles);
-            printf("Distance in Kilometers: %.2f\n", miles_to_km(miles));
-        }
+    } while (choice != 6);
 
-        else if(choice ==5){
-            printf("Enter Voltage of the circut");
-            scanf("%f",&voltage);
-        }
-
-        else{
-            printf("Exiting.......");
-        }
-
-        }while(choice!=6);
-    
     return 0;
-
-    }
-
-float celsius_to_fahrenheit(float c){
-    return (c * 9 / 5) + 32 ;
 }
 
-float farenheit_to_celsius(float f){
-    return  (f - 32) * 5 / 9 ;
+float celsius_to_fahrenheit(float celsius)
+{
+    return (celsius * 9 / 5) + 32;
 }
 
-float km_to_miles(float km){
-    return km * 0.621371;
+float fahrenheit_to_celsius(float fahrenheit)
+{
+    return (fahrenheit - 32) * 5 / 9;
 }
 
-float miles_to_km(float miles){
+float kilometers_to_miles(float kilometers)
+{
+    return kilometers * 0.621371;
+}
+
+float miles_to_kilometers(float miles)
+{
     return miles * 1.60934;
 }
 
-float calculate_power(float v,float i){
-    return v*i;
+float calculate_power(float voltage, float current)
+{
+    return voltage * current;
 }
