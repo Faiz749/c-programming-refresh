@@ -1,56 +1,77 @@
 # Electricity Bill Calculator
 
-## What it does
-This is a menu-based electricity bill calculator written in C. It calculates the electricity bill based on consumed units, applies a fixed service charge, calculates tax, and shows the final bill.
+## Overview
+
+A C program that calculates an electricity bill using slab-based pricing, service charges, and tax logic.
+
+## Purpose
+
+This project improves condition handling and range-based calculations. Slab logic is similar to sensor-state classification in embedded systems.
+
+## Main Skill
+
+```text
+Conditions, ranges, slabs
+```
 
 ## Features
-- Calculate electricity bill
-- Show slab information
-- Repeated menu until exit
-- Invalid choice handling
-- Negative units validation
-- Rate selection using slabs
-- Base bill calculation
-- Service charge addition
-- Tax calculation
-- Final bill calculation
 
-## Bill Slabs
-- 0 to 100 units = 10 per unit
-- 101 to 200 units = 15 per unit
-- 201 to 300 units = 20 per unit
-- Above 300 units = 30 per unit
+- Input consumed electricity units
+- Apply slab-based rate calculations
+- Add service charges or tax where required
+- Display a clear bill summary
+- Handle different usage ranges
 
-## Extra Charges
-- Service charge = 100
-- Tax = 10%
+## Concepts Practiced
 
-## Concepts used
-- Functions
-- Function prototypes
-- Parameters
-- Return values
-- If-else conditions
-- Do-while loop
-- While loop
-- Float calculations
-- Menu-based program
-- Input validation
-- Basic input/output using `printf` and `scanf`
-- library used: `stdbool.h` 
+- If-else ladder
+- Range checking
+- Floating-point arithmetic
+- Function-based bill calculation
+- Readable output formatting
 
-## Mistakes I fixed
+## Embedded Systems Connection
 
-- I forgot semicolons in some places.
-- I accidentally gave variables the same names as my helper functions.
-- I missed a bracket in `printf` while printing the tax.
-- In get_units, I accidentally used units instead of u.
+Many embedded systems classify values into ranges: low, medium, high, warning, danger. This project trains that same logic using electricity units.
 
-## How to compile and run
+## Example Flow
 
-Compile the program:
-Run the program:
-./electricity_bill
+```text
+Input data
+Process data using C logic
+Apply conditions or calculations
+Display final output clearly
+```
 
-On Windows, you can also run:
-electricity_bill.exe
+## How to Compile and Run
+
+### Linux / macOS
+
+```bash
+gcc main.c -o 03_electricity_bill_calculator
+./03_electricity_bill_calculator
+```
+
+### Windows
+
+```bash
+gcc main.c -o 03_electricity_bill_calculator.exe
+03_electricity_bill_calculator.exe
+```
+
+## Sample Output
+
+```text
+Program starts
+User enters required input
+Program processes the input
+Result summary is displayed
+```
+
+## What I Learned
+
+Through this project, I practiced writing cleaner C code, using the main concept of the day, and connecting normal C programming with embedded-style problem solving.
+
+## Status
+
+Completed as part of the C Programming Refresh course.
